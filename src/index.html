@@ -2,23 +2,19 @@
 <!DOCTYPE html>
 <!-- Оболочка документа, указываем язык содержимого -->
 <html lang="ru">
-  <!-- Заголовок страницы, контейнер для других важных данных (не отображается) -->
+<!-- Заголовок страницы, контейнер для других важных данных (не отображается) -->
 
-  <head>
+<head>
     <!-- Заголовок страницы в браузере -->
     <title>Портфолио</title>
     <!-- Кодировка страницы -->
-    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
-  </head>
-  <!-- Отображаемое тело страницы -->
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+</head>
+<!-- Отображаемое тело страницы -->
 
-  <body>
-  <div class="container">
-<!-- Corners-->
-    <div class="empty-corner"></div>
-    <div class="empty-corner"></div>
-    <div class="empty-corner"></div>
-    <div class="empty-corner"></div>
+<body>
+<div class="container">
+    <!-- Corners-->
     <div class="corner top-left">
     </div>
     <div class="corner top-right">
@@ -27,20 +23,40 @@
     </div>
     <div class="corner bottom-right">
     </div>
-<!--Menu-->
-      <div class="menu">
-        <div class="sticker about">
-          About
+<section>
+
+    <div class="photo-col">
+        <div class="left-tape"></div>
+        <div class="right-tape"></div>
+        <!--    Main photo-->
+        <img class="main-photo" src="src/img/main_photo.jpeg" alt="">
+        <!--    Short about-->
+        <div class="short-about">
+            <p>Hello, I'm Timur Urazbakhtin.</p>
+            <p>I'm frontend developer.</p>
         </div>
-        <div class="sticker projects">
-          Projects
-        </div>
-        <div class="sticker contact">
-          Contact
-        </div>
-      </div>      
-      <footer></footer>
     </div>
-    
-  </body>
+    <div class="menu-col">
+        <!--      Menu-->
+        <div class="menu">
+            <div class="sticker about">
+                More about me
+            </div>
+            <div class="sticker projects">
+                Projects
+            </div>
+            <div class="sticker contact">
+                Contact
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+    <footer></footer>
+</div>
+
+</body>
 </html>
