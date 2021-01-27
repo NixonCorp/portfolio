@@ -1,368 +1,40 @@
 @import "./null_style.scss";
-@import url(https://fonts.googleapis.com/css?family=Shadows+Into+Light);
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
-body {
-  background-color: #2d2d2d;
-  overflow: hidden;
-  font-family: "Shadows Into Light", cursive;
-  letter-spacing: 2px;
+body{
+  background-color: #1C1C1C;
 }
 
-$mobile_device_min_width: 320px;
-$mobile_device_max_width: 480px;
-$tablet_min_width: 481px;
-$tablet_max_width: 768px;
-$laptop_min_width: 769px;
-$laptop_max_width: 1024px;
-$desktop_min_width: 1025px;
-$desktop_max_width: 1200px;
-$MDPI_screen_min_width: 1201px;
-$MDPI_screen_max_width: 1280px;
-$HiDPI_screen_min_width: 1281px;
-$HiDPI_screen_max_width: 1440px;
-
-@mixin shadows($isCurl) {
-  @if ($isCurl) {
-    -webkit-box-shadow: 3px 17px 6px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 3px 17px 6px rgba(0, 0, 0, 0.3);
-    box-shadow: 3px 17px 6px rgba(0, 0, 0, 0.3);
-  } @else {
-    -webkit-box-shadow: -3px 5px 12px 0 rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: -3px 5px 12px 0 rgba(0, 0, 0, 0.3);
-    box-shadow: -3px 5px 12px 0 rgba(0, 0, 0, 0.3);
-  }
-}
-
-.container {
-  position: relative;
-  background-color: white;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  border: 30px solid transparent;
-  background-image: linear-gradient(white, white),
-    linear-gradient(to bottom, #bcc6cc, #eee, #bcc6cc);
-  background-origin: border-box;
-  background-clip: content-box, border-box;
-  box-shadow: white 2px 2px 20px;
-  border-radius: 20px;
-  height: 95%;
-  width: 95%;
-  z-index: 1;
-}
-
-.corner {
-  background-color: #a05700;
-  z-index: 3;
-  position: absolute;
-  width: 35px;
-  height: 35px;
-  margin: -30px;
-
-  &.top-left {
-    top: 0;
-    left: 0;
-    border-radius: 20px 0 5px 0;
-  }
-
-  &.top-right {
-    top: 0;
-    right: 0;
-    border-radius: 0 20px 0 5px;
-  }
-
-  &.bottom-left {
-    bottom: 0;
-    left: 0;
-    border-radius: 0 5px 0 20px;
-  }
-
-  &.bottom-right {
-    bottom: 0;
-    right: 0;
-    border-radius: 5px 0 20px 0;
-  }
-}
-
-.main-photo {
-  border: solid 15px white;
-  @include shadows(false);
-  margin-bottom: 40px;
-  -webkit-transform: rotate(5deg);
-  -moz-transform: rotate(5deg);
-  -ms-transform: rotate(5deg);
-  -o-transform: rotate(5deg);
-  transform: rotate(5deg);
-}
-
-section {
-  width: 100%;
-  height: 100%;
-}
-
-.photo-col,
-.menu-col {
-  float: left;
-  width: 50%;
-  text-align: center;
-}
-
-.photo-col {
-  position: relative;
-  top: 50%;
-  left: 30%;
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%, -50%);
-  z-index: 1;
-}
-
-.menu-col {
-  position: relative;
-  top: 50%;
-  left: 25%;
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%, -50%);
-}
-
-.sticker {
-  position: relative;
+.header{
+  max-width: 1110px;
+  height: 100px;
   margin: 0 auto;
-  cursor: pointer;
-  text-align: center;
-  @include shadows(false);
-
-  &.about {
-    margin-bottom: 40px;
-    background-color: #fcf59b;
+  &__logo{
+    width: 100px;
+    margin-top: 17px;
+    margin-right: 660px;
+    display: inline-block;
   }
+  &__menu{
+    /* Auto Layout */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
 
-  &.projects {
-    margin-bottom: 40px;
-    background-color: #cffc9b;
+    float: right;
+    font-family: 'Poppins';
+
+    line-height: 24px;
+    width: 171px;
+    height: 24px;
+    margin-right: 179px;
+    margin-top: 38px;
   }
-
-  &.contact {
-    background-color: #9bc2fc;
+  &__link{
+    &:nth-child(1){
+    margin-right: 40px;
+  }
+    color: #F1F1F1;
   }
 }
-
-.tape-common {
-  position: absolute;
-  z-index: 2;
-  background-color: #f88d8d;
-  opacity: 0.5;
-  border-left: 2px dashed white;
-  border-right: 2px dashed white;
-  -webkit-box-shadow: 0px 0px 1px 0px #cccccc;
-  -moz-box-shadow: 0px 0px 1px 0px #cccccc;
-  box-shadow: 0px 0px 1px 0px #cccccc;
-}
-
-.left-tape {
-  @extend .tape-common;
-  -webkit-transform: rotate(-30deg) skew(0, 0);
-  -moz-transform: rotate(-30deg) skew(0, 0);
-  -o-transform: rotate(-30deg) skew(0, 0);
-  -ms-transform: rotate(-30deg) skew(0, 0);;
-  transform: rotate(-30deg) skew(0, 0);
-}
-
-.right-tape {
-  @extend .tape-common;
-  -webkit-transform: rotate(45deg) skew(0, 0);
-  -moz-transform: rotate(45deg) skew(0, 0);
-  -o-transform: rotate(45deg) skew(0, 0);
-  -ms-transform:rotate(45deg) skew(0, 0);
-  transform: rotate(45deg) skew(0, 0);
-}
-
-.sticker::before {
-  content: "";
-  display: block;
-  position: absolute;
-  z-index: -1;
-  width: 90%;
-  height: 30px;
-  bottom: 12px;
-  right: 5px;
-  -ms-transform: skew(-10deg, -5deg);
-  -webkit-transform: skew(-10deg, -5deg);
-  -moz-transform: skew(-10deg, -5deg);;
-  -o-transform: skew(-10deg, -5deg);
-  transform: skew(-10deg, -5deg);
-  @include shadows(true);
-}
-
-@media screen and (min-width: $HiDPI_screen_max_width + 1) {
-  .short-about {
-    font-size: 50px;
-  }
-  .sticker {
-    font-size: 40px;
-    width: 300px;
-    line-height: 200px;
-  }
-  .main-photo {
-    width: 60%;
-  }
-  .left-tape {
-    top: -3%;
-    left: 17%;
-  }
-  .right-tape {
-    top: 3%;
-    left: 72%;
-  }
-  .tape-common {
-    width: 150px;
-    height: 35px;
-  }
-}
-
-@media screen and (min-width: $HiDPI_screen_min_width) and (max-width: $HiDPI_screen_max_width) {
-  .short-about {
-    font-size: 40px;
-  }
-  .sticker {
-    font-size: 30px;
-    width: 300px;
-    line-height: 150px;
-  }
-  .main-photo {
-    width: 60%;
-  }
-  .left-tape {
-    top: -3%;
-    left: 15%;
-  }
-  .right-tape {
-    top: 3%;
-    left: 70%;
-  }
-  .tape-common {
-    width: 120px;
-    height: 30px;
-  }
-}
-
-@media screen and (min-width: $MDPI_screen_min_width) and (max-width: $MDPI_screen_max_width) {
-  .short-about {
-    font-size: 45px;
-  }
-  .sticker {
-    font-size: 30px;
-    width: 300px;
-    line-height: 150px;
-  }
-  .main-photo {
-    width: 65%;
-  }
-  .left-tape {
-    top: -3%;
-    left: 12%;
-  }
-  .right-tape {
-    top: 3%;
-    left: 74%;
-  }
-  .tape-common {
-    width: 120px;
-    height: 30px;
-  }
-}
-
-@media screen and (min-width: $desktop_min_width) and (max-width: $desktop_max_width) {
-  .short-about {
-    font-size: 38px;
-  }
-  .sticker {
-    font-size: 26px;
-    width: 220px;
-    line-height: 120px;
-  }
-  .main-photo {
-    width: 65%;
-  }
-  .left-tape {
-    top: -3%;
-    left: 12%;
-  }
-  .right-tape {
-    top: 3%;
-    left: 70%;
-  }
-  .tape-common {
-    width: 120px;
-    height: 30px;
-  }
-}
-
-@media screen and (min-width: $laptop_min_width) and (max-width: $laptop_max_width) {
-  .photo-col {
-    position: relative;
-    top: 30%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%); 
-    -o-transform:  translate(-50%, -50%);    
-    transform: translate(-50%, -50%);
-    z-index: 1;
-    width: 60%;
-  }
-
-  .menu-col {
-    position: relative;
-    top: 28%;
-    left: 50%;
-    // transform: translate(-50%, -50%);
-  }
-  .short-about {
-    font-size: 45px;
-  }
-  .sticker {
-    font-size: 30px;
-    width: 300px;
-    line-height: 130px;
-  }
-  .main-photo {
-    width: 80%;
-  }
-  .left-tape {
-    top: -3%;
-    left: 5%;
-  }
-  .right-tape {
-    top: 3%;
-    left: 80%;
-  }
-  .tape-common {
-    width: 120px;
-    height: 30px;
-  }
-}
-
-//
-//.sticker::after {
-//  content: "";
-//  display: block;
-//  position: absolute;
-//  width: 0;
-//  height: 0;
-//  right: 15px;
-//  bottom: 19px;
-//  border-top: 10px solid rgb(156, 166, 61);
-//  border-right: 10px solid transparent;
-//  -webkit-transform: skew(-60deg, 10deg);
-//  transform: skew(-70deg, 40deg) rotate(-60deg);
-//}
