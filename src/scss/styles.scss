@@ -3,18 +3,21 @@
 
 body{
   background-color: #1C1C1C;
+  max-width: 1110px;
+  margin: 0 auto;  
 }
 
 .header{
-  max-width: 1110px;
+  
   height: 100px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin: 0 20px;
+  margin-bottom: 77px;
+  
   &__logo{
-    width: 100px;
+    width: 70px;
   }
   &__menu{
     padding: 0px;
@@ -30,4 +33,127 @@ body{
   }
     color: #F1F1F1;
   }
+}
+
+.short-about{
+  
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  &__first-row{
+    /* Hey! */
+
+
+height: 36px;
+
+
+/* Heading 4 */
+font-family: Poppins;
+font-style: normal;
+font-weight: 500;
+font-size: 24px;
+line-height: 36px;
+/* identical to box height, or 150% */
+
+/* #E1E1E1 */
+color: #E1E1E1;
+
+  }
+ &__second-row{
+  height: 180px;
+  width: 570px;
+/* Heading 1 */
+
+font-family: Poppins;
+font-style: normal;
+font-weight: 600;
+font-size: 48px;
+line-height: 62px;
+/* or 129% */
+
+
+color: #F1F1F1;
+ }
+ &__name{
+  color: #EEBF63;
+ }
+ &__line-vector{
+   margin-left: 80px;
+ }
+ &__third-row{
+  width: 538.98px;
+  height: 60px;
+  margin-bottom: 62px;
+  font-family: Poppins;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 30px;
+/* or 167% */
+
+
+/* #F1F1F1 */
+
+color: #F1F1F1;
+ }
+ &__social-links{
+   /* Social Icon */
+
+
+/* Auto Layout */
+
+color: #F1F1F1;
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: start;
+padding: 0px;
+
+
+width: 311px;
+height: 37px;
+ }
+&__social-links-txt{
+  /* Body Text */
+  // display: flex;
+  // align-items: center;
+ 
+font-family: Poppins;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 30px;
+
+display: flex;
+align-items: center;
+
+
+
+/* Inside Auto Layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+// margin: 0px 30px;
+}
+&__social-links-icon{
+  width: 32px;
+height: 32px;
+path{
+  fill: #F1F1F1;
+}
+
+ /* Inside Auto Layout */
+
+ flex: none;
+ 
+ flex-grow: 0;
+ margin: 0px 30px; 
+ 
+ 
+
+
+}
+ 
 }
