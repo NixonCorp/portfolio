@@ -57,6 +57,7 @@ module.exports = {
   devServer: {
     port: 9090,
     open: true,
+    hot: true
   },
   plugins: [
     new webpack.ProgressPlugin(),
@@ -97,6 +98,9 @@ module.exports = {
             options: {
               sourceMap: true,
             }
+          },
+          {
+            loader: 'postcss-loader'
           },
           {
             loader: "sass-loader",
