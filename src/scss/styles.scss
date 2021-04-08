@@ -274,11 +274,11 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: 10px;
-    width: 540px;
+    width: 200px;
 
     &-img {
-      width: 540px;
-      height: 540px;
+      width: 200px;
+      height: 200px;
       border-radius: 25px;
       background-color: darkgray;
     }
@@ -327,6 +327,7 @@ body {
     &-title {
       @extend .heading-1;
       color: #F1F1F1;
+      margin-bottom: 63px;
     }
     &-fields{
       height: 390px;
@@ -339,9 +340,7 @@ body {
       @extend .body-txt;
       color: #E1E1E1;
       padding-left: 33px;
-      &:hover{
-
-      }
+      
       &::placeholder{
         color: #E1E1E1;
       }
