@@ -313,13 +313,15 @@ body {
 }
 
 .contact {
+  @extend .welcome;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 1110px;
   height: 670px;
   background: #486074;
+  margin-bottom: 0px;
 
   &__form {
     height: 577px;
@@ -330,7 +332,12 @@ body {
       margin-bottom: 63px;
     }
     &-fields{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       height: 390px;
+      gap: 30px;
+      margin-bottom: 30px;
     }
     &-field{
       height: 60px;
@@ -344,6 +351,66 @@ body {
       &::placeholder{
         color: #E1E1E1;
       }
+    }
+    &-text-area{
+      padding-top: 10px;
+      resize: none;
+      height: 120px;
+    }
+    &-send-btn{
+      @extend .medium-txt;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      float: right;
+      width: 180px;
+      height: 55px;
+      background: #CD921E;
+      border-radius: 10px;
+      color: #F1F1F1;
+    }
+  }
+}
+
+.footer{
+  height: 163.9px;
+  display: flex;
+  align-items: center;
+  &__container{
+    width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: #F1F1F1;
+  }
+  &__txt{
+    @extend .heading-2;
+
+  }
+  &__social-links{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    gap: 30px;
+    padding: 0px;
+  }
+  &__back-to-top{
+    display: flex;
+    flex-direction: row;
+    gap: 13px;
+    align-items: center;
+    justify-content: space-between;
+
+    &-txt{
+      width: 141px;
+@extend .heading-4;
+    }
+    &-icon{
+      width: 18px;
+      height: 24px;
     }
   }
 }
