@@ -52,7 +52,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "./dist"),
     filename: filename("js"),
-    publicPath: '/'
+    publicPath: './'
   },
   devServer: {
     port: 9090,
@@ -63,7 +63,7 @@ module.exports = {
     new webpack.ProgressPlugin(),
     new MiniCssExtractPlugin({ filename: filename("css") }),
     new HtmlWebpackPlugin({
-      template: "./src/index.html",
+      template: "./src/index.html"
     }),
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
   ],
@@ -76,9 +76,23 @@ module.exports = {
         loader: "babel-loader",
       },
       {
-        test: /\.(ttf|eot|svg|png|jpg|gif|ico)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'file-loader'
+        test: /\.html$/,
+        use: [
+           {loader: 'html-loader',
+           options: {            
+            esModule: false,
+        },}
+        ]
+       },
+      {
+        test: /\.(ttf|eot|svg|png|jpg|jpeg|gif|ico)$/,
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]',
+          esModule: false,
       },
+      },
+    
       {
         test: /.(scss|css)$/,
 
@@ -110,7 +124,7 @@ module.exports = {
             },
           },
         ],
-      },
+      },      
     ],
   },
 
