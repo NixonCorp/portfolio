@@ -1,20 +1,30 @@
-import '../scss/styles.scss'
-import './form-field-module'
-import CSSKeyframer from 'css-keyframer'
-import {initFormField} from "./form-field-module";
-console.log('Hello World from index main file!')
-initFormField('contact-name', 'Enter your name')
-initFormField('contact-email', 'Enter your email')
-initFormField('contact-message', 'Write your message')
-document.addEventListener('readystatechange', (event) => {
-    if(document.readyState === 'complete'){
-            document.getElementsByClassName('contact__form-fields')[0].style.cssText = 'margin-left:0px !important'
-            const formFields = document.getElementsByClassName('contact__form-field')
-            for(let i = 0;i < formFields.length;i++){
-                formFields[i].style.cssText = 'margin-left:0px !important'
-            }
+import '../scss/styles.scss';
 
+window.goToContactContainer = () => {
+    document.getElementById('contact').scrollIntoView({behavior: "smooth"});
+}
+
+window.animateScrollToTop = (duration) => {
+    // cancel if already on top
+    if (document.scrollingElement.scrollTop === 0) {
+        return;
     }
-});
 
+    const cosParameter = document.scrollingElement.scrollTop / 2;
+    let scrollCount = 0, oldTimestamp = null;
 
+    function step(newTimestamp) {
+        if (oldTimestamp !== null) {
+            // if duration is 0 scrollCount will be Infinity
+            scrollCount += Math.PI * (newTimestamp - oldTimestamp) / duration;
+            if (scrollCount >= Math.PI) {
+                return document.scrollingElement.scrollTop = 0;
+            }
+            document.scrollingElement.scrollTop = cosParameter + cosParameter * Math.cos(scrollCount);
+        }
+        oldTimestamp = newTimestamp;
+        window.requestAnimationFrame(step);
+    }
+
+    window.requestAnimationFrame(step);
+}

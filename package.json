@@ -37,13 +37,17 @@
   },
   "author": "Timur Urazbakhtin",
   "license": "ISC",
-  "browserslist": [
-    "defaults",
-    "not ie < 11",
-    "last 4 versions",
-    "> 1%",
-    "iOS 7",
-    "last 3 iOS versions"
-  ],
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 2 chrome version",
+      "last 2 firefox version",
+      "last 2 safari version"
+    ]
+  },
   "keywords": []
 }
