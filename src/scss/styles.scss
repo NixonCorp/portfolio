@@ -21,6 +21,11 @@ body {
   nav{
     margin-right: 185px;
   }
+  &__title{
+    @extend .heading-4;
+    color: #E1E1E1;
+  }
+
   &__logo {
     width: 60px;
   }
@@ -36,6 +41,9 @@ body {
 
   &__nav-link {
     color: #F1F1F1;
+    &:hover{
+      text-shadow: 0 0 15px linen;
+    }
   }
 }
 
@@ -332,6 +340,13 @@ body {
     gap: 30px;
     padding: 0px;
 
+  }
+
+  &__social-link{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
   }
 
   &__back-to-top {
