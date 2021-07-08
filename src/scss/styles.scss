@@ -261,7 +261,8 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    gap: 30px;
+    //gap: 30px;
+    min-width: -webkit-fill-available;
   }
 
   &__project-item {
@@ -272,6 +273,9 @@ body {
     gap: 10px;
     width: 200px;
     cursor: pointer;
+    &:hover{
+      text-shadow: 0 0 15px linen;
+    }
 
     &-card {
       width: 200px;
