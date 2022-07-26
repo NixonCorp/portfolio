@@ -46,13 +46,11 @@ const filename = (ext) =>
 module.exports = {
   mode: "development",
 
-  entry: {
-    index: "./src/js/index.js",
-  },
+  entry: "./src/js/index.js",
+  stats: { warnings: false },
   output: {
     path: path.resolve(__dirname, "./dist"),
-    filename: filename("js"),
-    publicPath: './'
+    filename: filename("js")
   },
   devServer: {
     port: 9070,
@@ -60,12 +58,10 @@ module.exports = {
     hot: true
   },
   plugins: [
-    new webpack.ProgressPlugin(),
     new MiniCssExtractPlugin({ filename: filename("css") }),
     new HtmlWebpackPlugin({
       template: "./src/index.html"
-    }),
-    new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
+    })
   ],
 
   module: {
@@ -78,21 +74,19 @@ module.exports = {
       {
         test: /\.html$/,
         use: [
-           {loader: 'html-loader',
-           options: {            
-            esModule: false,
-        },}
+          {
+            loader: 'html-loader',
+            options: {
+              esModule: false,
+            },
+          }
         ]
-       },
+      },
       {
         test: /\.(ttf|eot|svg|png|jpg|jpeg|gif|ico)$/,
-        loader: 'file-loader',
-        options: {
-          name: '[path][name].[ext]',
-          esModule: false,
+        type: 'asset/inline'
       },
-      },
-    
+
       {
         test: /.(scss|css)$/,
 
@@ -101,30 +95,16 @@ module.exports = {
             loader: MiniCssExtractPlugin.loader,
           },
           {
-            loader: "css-loader",
-
-            options: {
-              sourceMap: true,
-            },
-          },
-          {
-            loader: "resolve-url-loader",
-            options: {
-              sourceMap: true,
-            }
+            loader: "css-loader"
           },
           {
             loader: 'postcss-loader'
           },
           {
-            loader: "sass-loader",
-
-            options: {
-              sourceMap: true,
-            },
+            loader: "sass-loader"
           },
         ],
-      },      
+      },
     ],
   },
 
