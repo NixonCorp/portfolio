@@ -1,6 +1,8 @@
 @import "./null_style.scss";
 @import "./typography.scss";
 
+$mobile: "screen and (max-width: 1200px)";
+
 html {
   scroll-behavior: smooth;
 }
@@ -18,7 +20,7 @@ body {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 77px;
-  @media screen and (max-width: 1200px) {
+  @media #{$mobile} {
     margin-bottom: 50px;
   }
 
@@ -26,7 +28,7 @@ body {
     @extend .heading-4;
     color: #e1e1e1;
     margin-top: 20px;
-    @media screen and (max-width: 1200px) {
+    @media #{$mobile} {
       margin-left: auto;
       margin-right: auto;
     }
@@ -35,7 +37,7 @@ body {
   &__logo {
     width: 60px;
   }
-  @media screen and (max-width: 1200px) {
+  @media #{$mobile} {
     nav {
       display: none;
     }
@@ -64,7 +66,7 @@ body {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 105px;
-  @media screen and (max-width: 1200px) {
+  @media #{$mobile} {
     flex-direction: column;
     gap: 60px;
     margin-bottom: 36px;
@@ -75,7 +77,7 @@ body {
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    @media screen and (max-width: 1200px) {
+    @media #{$mobile} {
       align-items: center;
       order: 1;
     }
@@ -89,7 +91,7 @@ body {
   &__row:nth-child(2) {
     @extend .heading-1;
     color: #f1f1f1;
-    @media screen and (max-width: 1200px) {
+    @media #{$mobile} {
       max-width: 600px;
       text-align: center;
     }
@@ -107,7 +109,7 @@ body {
     margin-bottom: 62px;
     @extend .body-txt;
     color: #f1f1f1;
-    @media screen and (max-width: 1200px) {
+    @media #{$mobile} {
       text-align: center;
       margin-bottom: 30px;
     }
@@ -195,7 +197,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    @media screen and (max-width: 1200px) {
+    @media #{$mobile} {
       justify-content: center;
       order: 0;
     }
@@ -286,24 +288,21 @@ body {
     align-items: center;
     justify-content: space-between;
     min-width: -webkit-fill-available;
-    @media screen and (max-width: 1200px) {
+    @media #{$mobile} {
       gap: 74px;
       flex-direction: column;
     }
   }
 
-  &__project-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    width: 200px;
-    cursor: pointer;
-    &:hover {
-      text-shadow: 0 0 15px linen;
-    }
+  &__container {
+    position: relative;
+    max-width: 800px;
+    min-width: 600px;
+    margin: 100px auto;
+    height: 500px;
+  }
 
+  &__project-item {
     &-card {
       width: 200px;
       height: 200px;
@@ -313,14 +312,52 @@ body {
       flex-direction: row;
       align-items: center;
       justify-content: center;
-      @media screen and (max-width: 1200px) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 1px solid gray;
+      border-radius: 7px;
+      background: #000;
+      color: #fff;
+      padding: 20px;
+      transform-origin: 50% 100%;
+      font-family: sans-serif;
+      font-size: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+
+      &.column {
+        flex-direction: column;
+        gap: 20px;
+      }
+      &.active {
+        background: #fff;
+        transition: transform 0.2s ease-out;
+      }
+
+      &:not(.active) {
+        transition: transform 0.4s linear;
+      }
+
+      &.swiped {
+        transition-duration: 0.2s;
+      }
+      cursor: pointer;
+      &:hover {
+        text-shadow: 0 0 15px linen;
+      }
+      @media #{$mobile} {
         width: calc(100vw - 200px);
         height: calc(100vw - 200px);
       }
 
       img {
-        width: 100px;
-        @media screen and (max-width: 1200px) {
+        width: 250px;
+        @media #{$mobile} {
           width: auto;
         }
       }
@@ -329,20 +366,23 @@ body {
       }
 
       &-image {
-        width: 30px;
         margin-right: 10px;
         &:nth-child(1) {
-          @media screen and (max-width: 1200px) {
+          width: 100px;
+          @media #{$mobile} {
             width: 200px;
           }
         }
       }
 
       &-text {
-        font-family: "MetalLord-Regular";
-        font-size: 22px;
+        &.metal-font {
+          font-family: "MetalLord-Regular";
+        }
+        transform: translateY(0) !important;
+        font-size: 48px;
         color: black;
-        @media screen and (max-width: 1200px) {
+        @media #{$mobile} {
           font-size: 72px;
         }
       }
